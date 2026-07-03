@@ -1,7 +1,7 @@
 #side .nav a::before {
   left: 50%;
   right: auto;
-  bottom: 0.55rem;
+  bottom: calc(0.55rem + 4px);
   margin-right: 0;
   transform: translateX(-50%);
 }
