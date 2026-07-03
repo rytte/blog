@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: rytte's Blog
+title: rytte‘s zone
 subtitle: ''
 description: ''
 keywords:
@@ -101,6 +101,7 @@ theme: hexo-theme-huhu
 theme_config:
   author: rytte
   avatar: /images/avatar.jpg
+  favicon: /images/avatar.jpg
   follow:
     github: https://github.com/rytte
 

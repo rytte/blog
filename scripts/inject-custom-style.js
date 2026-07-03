@@ -18,6 +18,8 @@ hexo.extend.filter.register('after_render:html', function customizeRenderedHtml(
   const tag = `<link rel="stylesheet" href="${customStyleHref}">`;
   const avatar = this.theme.config.avatar || '/images/avatar.jpg';
   const avatarHref = normalizeAssetPath(avatar, normalizedRoot);
+  const favicon = this.theme.config.favicon || avatar;
+  const faviconHref = normalizeAssetPath(favicon, normalizedRoot);
 
   let result = html;
 
@@ -26,6 +28,10 @@ hexo.extend.filter.register('after_render:html', function customizeRenderedHtml(
   }
 
   return result
+    .replace(
+      /<link rel="shortcut icon" href="\/images\/[^"]+" type="image\/x-icon" \/>/,
+      `<link rel="icon" href="${faviconHref}" type="image/jpeg" />`
+    )
     .replace(/href="\/" class="logo"/g, `href="${normalizedRoot}" class="logo"`)
     .replace(/url\('\/images\/logo\.jpeg'\)/g, `url('${avatarHref}')`)
     .replace(/src="\/images\/logo\.jpeg"/g, `src="${avatarHref}"`);
