@@ -28,7 +28,10 @@ hexo.extend.filter.register('after_render:html', function customizeRenderedHtml(
   }
 
   if (result.includes('<div class="title">关于</div>')) {
-    result = result.replace(/\s*<div class="post-reward">[\s\S]*?\n\s*<div class="post-guide">/, '\n  <div class="post-guide">');
+    result = result.replace(
+      /\s*<div class="post-reward">[\s\S]*?\n\s*<div class="post-guide">/,
+      '\n  <div class="post-reward">\n    <div id="reward-button">打赏</div>\n  </div>\n  <div class="post-guide">'
+    );
   }
 
   return result
