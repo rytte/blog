@@ -1,0 +1,6 @@
+#side .nav a::before {
+  left: 50%;
+  right: auto;
+  margin-right: 0;
+  transform: translateX(-50%);
+}
