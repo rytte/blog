@@ -1,5 +1,16 @@
 'use strict';
 
+hexo.extend.filter.register('before_generate', function removeDefaultFollowLinks() {
+  const follow = this.theme.config.follow;
+
+  if (!follow) {
+    return;
+  }
+
+  delete follow.facebook;
+  delete follow.instagram;
+});
+
 hexo.extend.filter.register('after_render:html', function injectCustomStyle(html) {
   const root = this.config.root || '/';
   const normalizedRoot = root.endsWith('/') ? root : `${root}/`;

@@ -98,6 +98,10 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: hexo-theme-huhu
+theme_config:
+  author: rytte
+  follow:
+    github: https://github.com/rytte
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
