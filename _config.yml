@@ -102,8 +102,27 @@ theme_config:
   author: rytte
   avatar: /images/avatar.jpg
   favicon: /images/avatar.jpg
+  menu:
+    home: /
+    archives: /archives/
+    categories: /categories/
+    tags: /tags/
+    friends: /friends/
+    about: /about/
   follow:
     github: https://github.com/rytte
+
+jsonContent:
+  dateFormat: YYYY/MM/DD
+  pages: false
+  posts:
+    tags: true
+    title: true
+    date: true
+    text: true
+    permalink: true
+    photos: true
+  file: content.json
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

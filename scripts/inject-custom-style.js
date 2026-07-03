@@ -32,6 +32,8 @@ hexo.extend.filter.register('after_render:html', function customizeRenderedHtml(
       /<link rel="shortcut icon" href="\/images\/[^"]+" type="image\/x-icon" \/>/,
       `<link rel="icon" href="${faviconHref}" type="image/jpeg" />`
     )
+    .replace(/<link rel="manifest" href="\/manifest\.json" \/>/g, `<link rel="manifest" href="${normalizedRoot}manifest.json" />`)
+    .replace(/data-main', '\/scripts\//g, `data-main', '${normalizedRoot}scripts/`)
     .replace(/href="\/" class="logo"/g, `href="${normalizedRoot}" class="logo"`)
     .replace(/url\('\/images\/logo\.jpeg'\)/g, `url('${avatarHref}')`)
     .replace(/src="\/images\/logo\.jpeg"/g, `src="${avatarHref}"`);
